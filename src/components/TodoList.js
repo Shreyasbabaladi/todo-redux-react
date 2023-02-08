@@ -6,7 +6,7 @@ const TodoList = ({todoOrder}) => {
   return (
     <ul>
         {
-            todoOrder.map((todoIteam)=> <TodoIteam todoIteam={todoIteam}/>)
+            todoOrder.map((todoIteam)=> <TodoIteam key={todoIteam.id} todoIteam={todoIteam}/>)
         }
     </ul>
   )

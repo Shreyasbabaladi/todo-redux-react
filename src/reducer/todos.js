@@ -12,6 +12,8 @@ export default (state = initialState, action) => {
       return state.filter((todoIteam) => todoIteam.id !== action.payload);
     case UPDATE_TODO:
       return state.map((todoIteam) => todoIteam.id === action.payload.id? action.payload : todoIteam);
+      case ADD_TODO_LIST:
+        return action.payload
     default:
       return state;
   }

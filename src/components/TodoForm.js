@@ -26,10 +26,10 @@ const TodoForm = ({addTodo,updateTodo}) => {
     }
   return (
     <div>
-        <form onSubmit={handleSubmit} class="relative">
+        <form onSubmit={handleSubmit} className="relative">
             <input type='test' 
             value={todo.todoTitle} 
-            placeHolder="Add Todo" 
+            placeholder="Add Todo" 
             onChange={handleTitle} 
             className='w-full bg-Black-light p-3  rounded-2xl'/> 
 

@@ -30,7 +30,7 @@ const TodoIteam = ({ removeTodo, updateTodo, todoIteam }) => {
   }
 
   return (
-        <li key={todoIteam.id} className='w-full bg-[#21212b] p-3  rounded-2xl my-6 relative'>
+        <li className='w-full bg-[#21212b] p-3  rounded-2xl my-6 relative'>
           <div style={viewMode} className='flex  items-center'>
             <input
               type="checkbox"
@@ -53,7 +53,7 @@ const TodoIteam = ({ removeTodo, updateTodo, todoIteam }) => {
             className=' absolute right-[3%] -top-1/4 px-2 lg:px-3 py-1 rounded-xl bg-pink text-Black-dark font-bold'
           > Remove</button>
           <button onClick={handleEditing}
-          className=' absolute right-[20%] sm:right-[20%] md:right-[16%] lg:right-[15%] -top-1/4 px-2 lg:px-3 py-1 rounded-xl bg-pink text-Black-dark font-bold'
+          className=' absolute right-[27%] sm:right-[20%] md:right-[16%] lg:right-[15%] -top-1/4 px-2 lg:px-3 py-1 rounded-xl bg-pink text-Black-dark font-bold'
           > Update</button>
         </li>
   );

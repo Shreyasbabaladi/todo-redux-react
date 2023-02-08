@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 //redux
 import { connect } from 'react-redux'
-import { addTodo, removeTodo, updateTodo } from '../action/todos';
+import { addTodoList } from '../action/todos';
 
 //components
 import Buttons from './Buttons';
@@ -12,13 +12,17 @@ import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 
 
-function Todos({todos}) {
+function Todos({todos, addTodoList}) {
   const [ todoOrder, setTodoOrder ] = useState(todos);
 
+  useEffect(()=>{
+   const todoList = localStorage.getItem('todos');
+   todoList && addTodoList(JSON.parse(todoList));
+  },[])
 
   useEffect(()=>{
-
     setTodoOrder(todos);
+    todos.length !== 0 && localStorage.setItem('todos', JSON.stringify(todos));
 
   },[todos])
 
@@ -47,5 +51,10 @@ const mapStateToProps = (state) => ({
     todos:state.todos,
 })
 
+const mapDispatachToProps = (dispatach) => ({
+  addTodoList: (todosList) => {
+    dispatach(addTodoList(todosList));
+  },
+})
 
-export default connect(mapStateToProps)(Todos);
+export default connect(mapStateToProps,mapDispatachToProps)(Todos);
